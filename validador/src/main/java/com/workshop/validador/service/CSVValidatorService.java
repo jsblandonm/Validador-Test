@@ -34,7 +34,7 @@ public class CSVValidatorService implements RecordValidatorDTO {
     }
 
     public boolean validateBirthdate(String birhtdate) {
-        if (birhtdate.equals("")) {
+        if (birhtdate.isEmpty()) {
             return false;
         }
             DateTimeFormatter formatoMmDdYyyy = DateTimeFormatter.ofPattern("yyyy-M-d");
@@ -51,8 +51,8 @@ public class CSVValidatorService implements RecordValidatorDTO {
                 "Insurance account manager",
                 "Educational psychologist"
         };
-        for (String validJobTitle : validJobTitles) {
-            if (jobTitle.equalsIgnoreCase(jobTitle)) {
+        for (String valid : validJobTitles) {
+            if (jobTitle.equals(valid)) {
                 return true;
             }
         }
